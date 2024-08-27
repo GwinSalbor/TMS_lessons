@@ -1,86 +1,76 @@
-#region 1: А
-from calendar import firstweekday
+#- 1:a создать переменные всех типов данных которые мы изучили
+number=35
+print(type(number))
 
-value = 1
-value_with_constructor = int(2)
+float_number=6.8
+print(type(float_number))
 
-float_value_ = 3.14
-float_value_with_constructor = float(4.56)
+name="Dzina"
+print(type(name))
 
-boolean_value = True
-boolean_value_with_constructor = bool(False)
+bool_variable=True
+print(type(bool_variable))
 
-#endregion
 
-#region 1: B
+#1:b произвести разные операции над переменными int и float список операций ( +, -, *, /, **)
+int_variable=35
+int_variable1=15
+result=int_variable+int_variable1
+print(result)
 
-int_value = 10
-float_value = 5.0
+result1=int_variable-int_variable1
+print(result1)
 
-# Сложение
-addition = int_value + float_value
-print(f"Сложение: {int_value} + {float_value} = {addition}")
+result2=int_variable*int_variable1
+print(result2)
 
-# Вычитание
-subtraction = int_value - float_value
-print(f"Вычитание: {int_value} - {float_value} = {subtraction}")
+result3=int_variable/int_variable1
+print(result3)
 
-# Умножение
-multiplication = int_value * float_value
-print(f"Умножение: {int_value} * {float_value} = {multiplication}")
+result4=int_variable**2
+print(result4)
+result5=int_variable1**2
+print(result5)
 
-# Деление
-division = int_value / float_value
-print(f"Деление: {int_value} / {float_value} = {division}")
+fl_variable=6.8
+fl_variable1=2.2
+result=fl_variable+fl_variable1
+print(result)
 
-# Возведение в степень
-exponentiation = int_value ** float_value
-print(f"Возведение в степень: {int_value} ** {float_value} = {exponentiation}")
+result1=fl_variable-fl_variable1
+print(result1)
 
-# Целочисленное деление
-floor_division = int_value // float_value
-print(f"Целочисленное деление: {int_value} // {float_value} = {floor_division}")
+result2=fl_variable*fl_variable1
+print(result2)
 
-# Остаток от деления
-modulus = int_value % float_value
-print(f"Остаток от деления: {int_value} % {float_value} = {modulus}")
+result3=fl_variable/fl_variable1
+print(result3)
 
-#region -
-print('----')
-#endregion
-#endregion
+result4=fl_variable**2
+print(result4)
 
-#region 1: C
-milk = 3.99
-eggs = 5.0
-cheese = 2.75
+result5=fl_variable1**2
+print(result5)
 
-# Сумма
-total_cost = milk + eggs + cheese
-print(f"Общая стоимость: {milk} + {eggs} + {cheese} = {total_cost}")
+#1:c 
+   
+milk=3.69
+bread=3.99
+vegetables=64.44
+eggs=15.99
+sum=milk+bread+vegetables+eggs
+print(sum)
 
-#region -
-print('----')
-#endregion
-#endregion
+#1:d 
 
-#region 1: D
+number1=6
+number2=number1+3
+number3=number1+number2
+print(number1)
+print(number2)
+print(number3)
 
-first_value = 5
-second_value = first_value + 3
-third_value = first_value + second_value
-
-# Результат
-print(f"Первое значение: {first_value}")
-print(f"Второе значение: {second_value}")
-print(f"Третье значение: {third_value}")
-
-#region -
-print('----')
-#endregion
-#endregion
-
-#region 1: E
+#1:e
 
 chocolate_bar = 'chocolate bar'
 coffe = 'coffee'
@@ -88,8 +78,3 @@ tea = 'tea'
 
 result = "I have: " + chocolate_bar + ", " + coffe + ", " + tea
 print(result)
-
-#region -
-print('----')
-#endregion
-#endregion
