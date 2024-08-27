@@ -3,7 +3,8 @@ str_var = "antoha"
 float_var = 0.323232
 bool_var = True
 list_var = [1, 2, 3]
-set_var = (1, 2, 3)
+tuple_var = (1, 2, 3)
+set_var = {1, 2, 3}
 dict_var = {"a": 1, "b": 2, "c": 3}
 
 apple = 3
@@ -36,6 +37,7 @@ print(f"Тип переменной str_var --> {type(str_var)}")
 print(f"Тип переменной float_var --> {type(float_var)}")
 print(f"Тип переменной bool_var --> {type(bool_var)}")
 print(f"Тип переменной list_var --> {type(list_var)}")
+print(f"Тип переменной tuple_var --> {type(tuple_var)}")
 print(f"Тип переменной set_var --> {type(set_var)}")
 print(f"Тип переменной dict_var --> {type(dict_var)}")
 print()
