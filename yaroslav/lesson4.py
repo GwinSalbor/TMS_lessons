@@ -58,21 +58,21 @@ example_list1 = [0,12,1, 12, 2, 12, 3, 12, 2,3,4]
 # example_list1.append("asd")
 # print(example_list1)
 # example_list1.extend(example_list)
-print(example_list1[-2:])
+# print(example_list1[-2:])
 # print(example_list1)
 
 # del example_list1[1]
-example_list1.remove(12)
-print(example_list1)
-example_list1.remove(12)
-print(example_list1)
-for i in range(len(example_list1)):
-    if 12 in example_list1:
-        example_list1.remove(12)
-        print(example_list1)
-    else:
-        print("no 12 in exampl list")
-        break
+# example_list1.remove(12)
+# print(example_list1)
+# example_list1.remove(12)
+# print(example_list1)
+# for i in range(len(example_list1)):
+#     if 12 in example_list1:
+#         example_list1.remove(12)
+#         print(example_list1)
+#     else:
+#         print("no 12 in exampl list")
+#         break
 
 # last_element = example_list1.pop()
 # print(last_element)
@@ -106,13 +106,61 @@ for i in range(len(example_list1)):
 
 # print("Yaroslav, Hello world!")
 
-str(10)
-print(int(10.9))
-print(type(str(10)))
-print(type(int("123124")))
-example = [1,2,3,4,5, 5,6,4,45,4,2,3,1,3,3,2,2]
-print(example)
-print(set(example))
-print(set([1,2,3,4,5]) - set([2,3,4]))
+# str(10)
+# print(int(10.9))
+# print(type(str(10)))
+# print(type(int("123124")))
+# example = [1,2,3,4,5, 5,6,4,45,4,2,3,1,3,3,2,2]
+# print(example)
+# print(set(example))
+# print(set([1,2,3,4,5]) - set([2,3,4]))
 
-print(bool(0))
+# print(bool(0))
+
+
+
+# list_for_numbers_gret_5 = []
+# list_for_numbers_less_5 = []
+# list_of_letters = []
+# a = input()
+# for i in a:
+#     if i.isdigit():
+#         current_number = int(i)
+
+
+#         if current_number > 5:
+#             list_for_numbers_gret_5.append(int(i))
+#         else:
+#             list_for_numbers_less_5.append(int(i))
+#     else:
+#         list_of_letters.append(i)
+
+# print(list_for_numbers_gret_5)
+# print(list_for_numbers_less_5)
+# print(list_of_letters)
+
+# вам вводят строку в консоли
+# надо достать из нее все цифры
+# и посчитать сумму этих цифр
+
+
+a = input()
+list_for_numbers = []
+for i in a:
+    if i.isdigit():
+        print("цифра: ", i)
+        list_for_numbers.append(int(i))
+    else:
+        print("это буква: ", i)
+print(sum(list_for_numbers))
+
+summ = 0
+a = input()
+for i in a:
+    if i.isdigit():
+        print("цифра: ", i)
+        var = int(i)
+        summ += var
+    else:
+        print("это буква: ", i)
+print(summ)
