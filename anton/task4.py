@@ -4,11 +4,14 @@ list_string = list(input_string)
 
 def func_frequency(list_st):
 
+    list_b = []
+
     for i in list_st:
         i_count = list_st.count(i)
-        print(i_count, i)
+        list_b.append(dict({i_count : i}))
+    return list_b
 
-func_frequency(list_string)
+print(func_frequency(list_string))
     
 
 
