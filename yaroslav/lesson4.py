@@ -104,4 +104,15 @@ for i in range(len(example_list1)):
 # Множество из элементов, встречающихся в одном множестве, но не
 # встречающиеся в обоих.
 
-print("Yaroslav, Hello world!")
+# print("Yaroslav, Hello world!")
+
+str(10)
+print(int(10.9))
+print(type(str(10)))
+print(type(int("123124")))
+example = [1,2,3,4,5, 5,6,4,45,4,2,3,1,3,3,2,2]
+print(example)
+print(set(example))
+print(set([1,2,3,4,5]) - set([2,3,4]))
+
+print(bool(0))
