@@ -147,3 +147,5 @@ numbers = [1, 5, 2, 9, 2, 9, 1]
 # Находим и выводим уникальное число
 unique_number = find_unique_number(numbers)
 print("Уникальное число:", unique_number)
+
+
