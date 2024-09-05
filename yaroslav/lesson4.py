@@ -144,23 +144,62 @@ example_list1 = [0,12,1, 12, 2, 12, 3, 12, 2,3,4]
 # и посчитать сумму этих цифр
 
 
-a = input()
-list_for_numbers = []
-for i in a:
-    if i.isdigit():
-        print("цифра: ", i)
-        list_for_numbers.append(int(i))
-    else:
-        print("это буква: ", i)
-print(sum(list_for_numbers))
+# a = input()
+# list_for_numbers = []
+# for i in a:
+#     if i.isdigit():
+#         print("цифра: ", i)
+#         list_for_numbers.append(int(i))
+#     else:
+#         print("это буква: ", i)
+# print(sum(list_for_numbers))
 
-summ = 0
-a = input()
-for i in a:
-    if i.isdigit():
-        print("цифра: ", i)
-        var = int(i)
-        summ += var
-    else:
-        print("это буква: ", i)
-print(summ)
+# summ = 0
+# a = input()
+# for i in a:
+#     if i.isdigit():
+#         print("цифра: ", i)
+#         var = int(i)
+#         summ += var
+#     else:
+#         print("это буква: ", i)
+# print(summ)
+
+
+
+# new_dict = {"a": 2}
+# print(new_dict)
+# new_dict.update({"key2": 321})
+# print(new_dict)
+# print(new_dict.items())
+# print(new_dict.values())
+# print(new_dict.keys())
+
+# print(new_dict)
+# new_dict["b"] = 1 if not new_dict.get("b") else new_dict.get("b") + 1
+# print(new_dict)
+# new_dict["b"] = 1 if not new_dict.get("b") else new_dict.get("b") + 1
+# new_dict["b"] = 1 if not new_dict.get("b") else new_dict.get("b") + 1
+# print(new_dict)
+
+# def funx(x, y):
+#     return x + y
+
+# print(list(map(lambda x, y: x+y, [1,3], [2, 4])))
+
+# # new_dict["key"] = 53
+# new_dict["eqwe"]= 54
+
+# print(new_dict.get("qwe", None))
+
+# # from collections import defaultdict
+# # d = defaultdict(lambda: "no value")
+# # print(d["qwe"])
+
+
+new_list  = [9, 4, 3, 7, 8, 1,2,2,2,2,23,3,3,3,4,5,6]
+new_list2 = [9, 4, 3, 7, 8, 1000, 213123, 1232]
+
+new_set1 = set(new_list)
+new_set2 = set(new_list2)
+print(new_set2.intersection(new_set1))
