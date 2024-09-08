@@ -1,105 +1,179 @@
-#region 1 
+#region 1.1
 
-def chat_bot():
-    print(
-        "Привет! Я чат-бот. Вы можете поздороваться со мной, спросить как у меня дела, узнать мое имя или попрощаться. Для выхода введите 'exit' или 'выход'.")
+def add(a, b):
+    return a + b
 
-    while True:
-        user_input = input("Введите сообщение: ").strip().lower()
+def sub(a, b):
+    return a - b
 
-        if user_input in ["hello", "привет"]:
-            if user_input == "hello":
-                print("Hello!")
-            else:
-                print("Привет!")
-        elif user_input in ["how are you?", "как дела?"]:
-            if user_input == "how are you?":
-                print("I'm a bot, so I don't have feelings, but thanks for asking!")
-            else:
-                print("Я бот, поэтому у меня нет чувств, но спасибо за вопрос!")
-        elif user_input in ["what's your name?", "как тебя зовут?"]:
-            if user_input == "what's your name?":
-                print("I'm a simple chat bot created to assist you.")
-            else:
-                print("Я простой чат-бот, созданный чтобы помочь вам.")
-        elif user_input in ["bye", "пока"]:
-            if user_input == "bye":
-                print("Goodbye! Have a great day!")
-            else:
-                print("До свидания! Хорошего дня!")
-            break
-        elif user_input in ["exit", "выход"]:
-            if user_input == "exit":
-                print("Exiting the chat. Goodbye!")
-            else:
-                print("Выход из чата. До свидания!")
-            break
-        else:
-            if any(char in user_input for char in "abcdefghijklmnopqrstuvwxyz"):
-                print("I'm sorry, I don't understand that.")
-            else:
-                print("Извините, я не понимаю это.")
+def mult(a, b):
+    return a * b
+
+def div(a, b):
+    if b != 0:
+        return a / b
+    else:
+        return "Division by zero is not allowed"
+
+def calculate(a, b, operation):
+    if operation == '+':
+        return add(a, b)
+    elif operation == '-':
+        return sub(a, b)
+    elif operation == '*':
+        return mult(a, b)
+    elif operation == '/':
+        return div(a, b)
+    else:
+        return "Invalid operation"
+
+#endregion
+
+#region 1.2
+
+def add(a, b):
+    return a + b
 
 
-if __name__ == "__main__":
-    chat_bot()
+def sub(a, b):
+    return a - b
 
-#endregion]=
+
+def mult(a, b):
+    return a * b
+
+
+def div(a, b):
+    if b != 0:
+        return a / b
+    else:
+        return "Division by zero is not allowed"
+
+
+def calculate(a, b, operation):
+    operations = {
+        '+': add,
+        '-': sub,
+        '*': mult,
+        '/': div
+    }
+
+    if operation in operations:
+        return operations[operation](a, b)
+    else:
+        return "Invalid operation"
+#endregion
 
 #region 2
 
-str1 = "Robin Singh"
-str_to_list1 = list(str1)
+def calculate_statistics(*args, stat):
+    if not args:
+        return "No numbers provided"
 
-str2 = "I love arraty they are my favorite"
-str_to_list2 = list(str2)
+    if stat == 'avg':
+        return sum(args) / len(args)
+    elif stat == 'max':
+        return max(args)
+    elif stat == 'min':
+        return min(args)
+    elif stat == 'sum':
+        return sum(args)
+    else:
+        return "Invalid statistic"
 
 #endregion
 
 #region 3
 
-current_list = ['Ivan', 'Ivanov']
-str_first = 'Belarus'
-str_second = 'Minsk'
+import random
+import string
 
-print(f'Привет {current_list[0]} {current_list[1]}! Добро пожаловать в {str_second} {str_first}!')
+def generate_random_string(length=10):
+
+    letters = string.ascii_letters
+    return ''.join(random.choice(letters) for i in range(length))
+
+
+def write_strings_to_file(filename, num_strings=5):
+
+    numbers_to_append = [100, 200, 300, 400, 500]
+
+    with open(filename, 'w') as file:
+        for _ in range(num_strings):
+            random_string = generate_random_string()
+            for number in numbers_to_append:
+                file.write(f"{random_string}{number}\n")
+
+
+write_strings_to_file('random_strings.txt')
+
 #endregion
 
-#region 4
+#region 3.1
 
-current_list = ['I', 'love', 'array', 'they', 'are','my', 'favorite']
-list_to_string =' '.join(current_list)
+import random
+import string
+from datetime import datetime
 
-print(list_to_string)
-#endregione
 
-#region 5
+def generate_random_string(length=10):
+    letters = string.ascii_letters
+    return ''.join(random.choice(letters) for i in range(length))
 
-current_list = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
+def write_strings_to_file(filename, num_strings=5):
+    numbers_to_append = [100, 200, 300, 400, 500]
 
-current_list.insert(3, 'K')
+    with open(filename, 'w') as file:
+        for _ in range(num_strings):
+            random_string = generate_random_string()
+            current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            for number in numbers_to_append:
+                file.write(f"{current_time} {random_string}{number}\n")
 
-del current_list[3]
+
+write_strings_to_file('random_strings.txt')
 
 #endregion
 
-#region 6
+#region 3.2
 
-current_list = []
+import random
+import string
+from datetime import datetime
 
-for _ in range(1, 11):
-    current_list.append(input(f'Введите число: '))
+def generate_random_string(length=10):
+    letters = string.ascii_letters
+    return ''.join(random.choice(letters) for i in range(length))
 
-print(current_list)
-#endregion
+def write_strings_to_file(filename, num_strings=5):
+    numbers_to_append = [100, 200, 300, 400, 500]
 
-#region 7
+    with open(filename, 'w') as file:
+        for _ in range(num_strings):
+            random_string = generate_random_string()
+            current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            for number in numbers_to_append:
+                file.write(f"{current_time} {random_string}{number}\n")
 
-numbers = [1, 5, 2, 9, 2, 9, 1]
+def split_file_by_status(input_filename):
+    status_files = {
+        200: open('status_200.txt', 'w'),
+        300: open('status_300.txt', 'w'),
+        400: open('status_400.txt', 'w'),
+        500: open('status_500.txt', 'w')
+    }
 
-for number in numbers:
-    if numbers.count(number) == 1:
-        print(number)
-        break
+    with open(input_filename, 'r') as file:
+        for line in file:
+            status = int(line.strip()[-3:])
+            if status in status_files:
+                status_files[status].write(line)
+
+    for file in status_files.values():
+        file.close()
+
+
+write_strings_to_file('random_strings.txt')
+split_file_by_status('random_strings.txt')
 
 #endregion
