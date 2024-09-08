@@ -15,7 +15,7 @@ def add(values: int) -> int:
     Вычисляет и возвращает сумму принимаемых на вход int чисел
     """
 
-    values_of_add = 0
+    values_of_add: int = 0
 
     for i in values:
         values_of_add += i
@@ -29,7 +29,7 @@ def sub(values: int) -> int:
     Вычисляет и возвращает разность принимаемых на вход int чисел
     """
 
-    values_of_sub = values[0] * 2
+    values_of_sub: int = values[0] * 2
 
     for i in values:
         values_of_sub -= i
@@ -43,7 +43,7 @@ def mult(values: int) -> int:
     Вычисляет и возвращает произведение принимаемых на вход int чисел
     """
 
-    values_of_mult = 1
+    values_of_mult: int = 1
 
     for i in values:
         values_of_mult *= i
@@ -57,7 +57,7 @@ def div(values: int) -> float:
     Вычисляет и возвращает частное принимаемых на вход int чисел
     """
 
-    values_of_div = values[0] ** 2
+    values_of_div: int = values[0] ** 2
 
     for i in values:
         if i != 0:
@@ -75,7 +75,7 @@ def calculate(*args: int, **kwargs: dict):
     Возвращает результат функций add, sub, mult, div
     """
 
-    values_of_choise = kwargs.get(''.join(list(kwargs.keys())))
+    values_of_choise: str = kwargs.get(''.join(list(kwargs.keys())))
 
     match values_of_choise:
         case "+":
