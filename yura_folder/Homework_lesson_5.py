@@ -89,7 +89,7 @@ def write_to_file(filename, num_lines):
 
             line = f"{current_time} {random_string} {number}\n"     # Формируем строку с датой, строкой и числом
 
-            f.write(line)                  # Записываем строку в файл 
+            f.write(line)                  # Записываем строку в файл done
 
             print(f"Строка добавлена в файл и на экран: {line.strip()}")
 
