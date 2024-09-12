@@ -11,7 +11,7 @@ random.choice() - и модуля string который я описал в по�
 
 import random, string, datetime
 
-def generate_str_in_file(list_of_allphabet: list):
+def generate_str_in_file(list_of_symbols: list):
     """
     Функция на вход принимает лист определенных символов,
     генерирует рандомной длины слова из рандомных значений из этого листа,
@@ -34,7 +34,7 @@ def generate_str_in_file(list_of_allphabet: list):
             big_random_int = random.randint(5, 15)
 
             for j in range(big_random_int):
-                random_letters = random.choice(list_of_allphabet)
+                random_letters = random.choice(list_of_symbols)
                 list_of_random_string.append(random_letters)
 
             big_string = ''.join(list_of_random_string)
