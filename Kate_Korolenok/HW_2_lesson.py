@@ -52,8 +52,12 @@ denis_age = my_age + dima_age
 
 
 #Задание 1.e
+start = "Купіць:"
 prod1 = "цыбуля"
 prod2 = "цукар"
 prod3 = "цынамон"
 
-print("Купіць: ",prod1,",",prod2 ,",",prod3)
+print(start ,prod1,",",prod2,",",prod3) 
+
+list_of_names = ["цыбуля", "цукар", "цынамон"]
+print( "I have: " + ",".join(list_of_names))
