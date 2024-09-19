@@ -1,5 +1,4 @@
 # Task 1: Create lambda function (for single variable)
-from logging import raiseExceptions
 
 task1 = lambda name: print(f"Hello, {name}")
 task1("Ross") # Result: Hello, Ross
