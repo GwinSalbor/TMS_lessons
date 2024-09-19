@@ -123,5 +123,10 @@ def split_file_by_code():
                 file4.write(line)
             else:
                 print(f"Code is not detected in line: {line}")
+        file.close()
+        file1.close()
+        file2.close()
+        file3.close()
+        file4.close()
 
 split_file_by_code()
