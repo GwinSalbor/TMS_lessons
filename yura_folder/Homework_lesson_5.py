@@ -69,27 +69,21 @@ import random
 import string
 from datetime import datetime
 
-def generate_random_string(length=10):
-    letters = string.ascii_letters                                            # Использование заглавных и строчных
-    return ''.join(random.choice(letters) for i in range(length))
+# Генерация случайной строки и выбор случайного числа с вероятностями
+def generate_line():
+    random_string = ''.join(random.choice(string.ascii_letters) for _ in range(10))  # Генерация строки
+    number = random.choices([200, 300, 400, 500], [0.1, 0.2, 0.3, 0.4])[0]           # Выбор числа с вероятностями
+    current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')                      # Текущее время
+    return f"{current_time} {random_string} {number}"                                # Финальная строка
 
-def append_random_number():
-    numbers = [200, 300, 400, 500]
-    probabilities = [0.1, 0.2, 0.3, 0.4]                      # Вероятности для каждого числа
-    return random.choices(numbers, probabilities)[0]          # Возврат числа с учетом вероятности
-
+# Запись строк в файл
 def write_to_file(filename, num_lines):
     with open(filename, 'w') as f:
         for _ in range(num_lines):
-            random_string = generate_random_string()          # Генерация случайной строки
+            line = generate_line()         # Генерируем строку
+            f.write(line + '\n')           # Записываем в файл
+            print(f"Строка: {line}")       # Выводим на экран
 
-            number = append_random_number()                   # Добавляем случайное число с заданной вероятностью
-
-            current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')   # Получаем текущее время
-
-            line = f"{current_time} {random_string} {number}\n"     # Формируем строку с датой, строкой и числом
-
-            f.write(line)                  # Записываем строку в файл done
-
-            print(f"Строка добавлена в файл и на экран: {line.strip()}")
+# Пример использования
+write_to_file('random_strings.txt', 10)
 
