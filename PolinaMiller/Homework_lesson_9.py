@@ -138,4 +138,4 @@ class PlantSim(Sim):
         self.cost_of_living()
 
     def replenish_hygiene(self):
-        self.hygien
+        self.hygiene
