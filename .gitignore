@@ -185,3 +185,4 @@ fabric.properties
 .idea
 
 .DS_Store
+*.ipynb
