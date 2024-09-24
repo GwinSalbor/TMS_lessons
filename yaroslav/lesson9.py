@@ -127,28 +127,28 @@
 #     def drive(self):
 #         print("qweasd")
 
-# class Car:
-#     def __init__(self, name, fuel, fuel_amount):
-#         self.name = name
-#         self.fuel = fuel
-#         self.fuel_amount = fuel_amount
+class Car:
+    def __init__(self, name, fuel, fuel_amount):
+        self.name = name
+        self.fuel = fuel
+        self.fuel_amount = fuel_amount
     
-#     def drive1(self):
-#         self.fuel_amount -=10
-#         print("br-br-br-br-br")
+    def drive(self):
+        self.fuel_amount -=10
+        print("br-br-br-br-br")
 
-#     @staticmethod
-#     def stop():
-#         print("I'm stoped")
+    @staticmethod
+    def stop():
+        print("I'm stoped")
 
-# class Tayota(Car):
-#     def __init__(self,name, fuel, fuel_amount, volume):
-#         super().__init__(name, fuel, fuel_amount)
-#         self.volume = volume
+class Tayota(Car):
+    def __init__(self,name, fuel, fuel_amount, volume):
+        super().__init__(name, fuel, fuel_amount)
+        self.volume = volume
     
-#     @staticmethod
-#     def stop():
-#         print("i can not stop")
+    @staticmethod
+    def stop():
+        print("i can not stop")
 
 
 # class SuperCar(Tayota):
@@ -160,33 +160,80 @@
 # car_obj.stop()
 # print(car_obj.fuel_amount)
 
-from abc import ABC
 
-class MyABC(ABC):
-    pass
+# class Vehicle:
+#     def vehicle_method(self):
+#         print("Vehicle class")
+#     def drive(self):
+#         print("brbrb")
+# class Car(Vehicle):
+#     def car_method(self):
+#         print("Car class")
+# class Toyota(Car):
+#     def toyota_method(self):
+#         print("Toyota class")
+    
+#     def drive(self):
+#         print("go go go")
 
-class Car:
-    def drive(self):
-        pass
+# car_a = Toyota()
+# car_a.drive()
 
-    @staticmethod
-    def stop():
-        print("stop")
+# print("1" + "1")
+# print(1 + 1)
 
-    def stats(self):
-        print(self.fuel_amount)
+# from abc import ABC
 
-class Skoda(Car):
-    def __init__(self, name, fuel_amount):
-        self.name = name
-        self.fuel_amount = fuel_amount
+# class MyABC(ABC):
+#     pass
 
-    def drive(self):
-        self.fuel_amount -= 5
-        print("brbrb")
+# class Car:
+#     def drive(self):
+#         pass
 
-s = Skoda("t", 50)
+#     @staticmethod
+#     def stop():
+#         print("stop")
 
-s.drive()
-s.stats()
+#     def stats(self):
+#         print(self.fuel_amount)
 
+# class Skoda(Car):
+#     def __init__(self, name, fuel_amount):
+#         self.name = name
+#         self.fuel_amount = fuel_amount
+
+#     def drive(self):
+#         self.fuel_amount -= 5
+#         print("brbrb")
+
+# s = Skoda("t", 50)
+
+# s.drive()
+# s.stats()
+
+
+
+class A:
+    _month = 2
+    year = 2000
+
+    @property
+    def month(self):
+        return self._month
+
+    @month.setter
+    def month(self, month):
+        self._month = month
+        if self._month >= 12:
+            self.year += 1
+            self._month -= 12
+
+print(A.__mro__)
+# a = A()
+# print(a.year)
+# print(a.month)
+
+# a.month *=13
+# print(a.year)
+# print(a.month)
