@@ -5,6 +5,31 @@ class Food:
         self.cost = cost
 
 
+def sim_status(fun):
+    def inner(self, value):
+        if getattr(self, "_" + fun.__name__) < value and value>7:
+            print(fun.__name__ + " fully restored")
+            self.status = SimStatus.Perfect
+        elif getattr(self, "_" + fun.__name__) < value and 3< value < 7:
+            print(fun.__name__ + " restored")
+            self.status = SimStatus.NotGood
+        elif getattr(self, "_" + fun.__name__) > value and  0< value < 3:
+            print(f"{fun.__name__} indicator is too low, please restore id")
+            self.status = SimStatus.AlmostDead
+        elif getattr(self, "_" + fun.__name__) > value and  value <=1:
+            print(f"{fun.__name__} indicator is too low")
+            print("im dying")
+            self.status = SimStatus.Dead
+        print(value)
+        if value < 0:
+            value = 0
+        if value > 10:
+            value = 10
+
+        return fun(self, value)
+    return inner
+
+
 class Job:
     def __init__(self, name, salary, bladder_decreases=1, hunger_decreases=1, social_decreases=1, fun_decreases=1, hygiene_decreases=1):
         self.name = name
@@ -60,30 +85,52 @@ class Sim:
         return self._bladder
 
     @bladder.setter
+    @sim_status
     def bladder(self, value):
-         # можно вызывать только когда мы сделали все изменяемые параметры приватными "начинаются с _ "
-        # для того чтобы не вызывать повторно вызов сеттера
-        if self._bladder < value:
-            # мы тут сравниваем что нынешнее значение у сима "self._bladder" меньше чем "value" новое значение
-            # если нынешнее значение меньше, значит мы только что увеличили этот показатель, делаем вывод - сим сходил в туалет
-            print("наконец я сходил в туалет")
-        elif self._bladder > value and 0< value < 3:
-            # если нынешнее значение больше чем value - значит показатель нужды уменьшился
-            # делаем такую проверку для того чтобы не писать что мы хотим в туалет 
-            # если вдруг показатель увеличился на значение при котором мы не вышли за порог в 3
-            # AND если value < 3 значит новое значение меньше порога в 3 - выводим что сим хочет в туалет
-            print("I want to pee or poo")
-            self.status = SimStatus.AlmostDead # меняем статус
-        
-        elif self._bladder > value and  value <=1:
-            print("I'm dead")
-            self.status = SimStatus.Dead
-
         self.cost_of_living()
-        self._bladder = value # задаем новое значение
+        self._bladder = value
 
+    @property
+    def hunger(self):
+        return self._hunger
 
+    @hunger.setter
+    @sim_status
+    def hunger(self, value):
+        self.cost_of_living()
+        self._hunger = value
+    
+    @property
+    def social(self):
+        return self._social
 
+    @social.setter
+    @sim_status
+    def social(self, value):
+        self.cost_of_living()
+        self._social = value
+
+    @property
+    def hygiene(self):
+        return self._hygiene
+
+    @hygiene.setter
+    @sim_status
+    def hygiene(self, value):
+        self.cost_of_living()
+        self._hygiene = value
+    
+    @property
+    def energy(self):
+        return self._energy
+
+    @energy.setter
+    @sim_status
+    def energy(self, value):
+        self.cost_of_living()
+        self._energy = value
+    
+        
     def cost_of_living(self):
         # меняем приватные переменные, для того чтобы избежать повторный вызов сеттера
         self._bladder -= 1 
@@ -95,14 +142,32 @@ class Sim:
 Polina = Sim("Polina", "Asd", 18, "F", "qwe")
 
 
-print("увеличили")
 Polina.bladder += 1
-print("уменьшили но больше 3")
-Polina.bladder -= 8
-print("уменьшили и значение меньше 3")
-Polina.bladder -= 1
-Polina.bladder -= 1
-print("отрицательное")
-Polina.bladder -= 1
-Polina.bladder -= 1
-Polina.bladder -= 1
+Polina.bladder -= 5
+Polina.bladder += 1
+Polina.bladder += 1
+Polina.bladder += 100
+Polina.bladder -= 3
+Polina.bladder -= 3
+Polina.bladder -= 3
+Polina.bladder -= 3
+
+Polina.hunger += 1
+Polina.hunger -= 3
+Polina.hunger -= 3
+Polina.hunger -= 3
+
+# Polina.social += 1
+# Polina.social -= 3
+# Polina.social -= 3
+# Polina.social -= 3
+
+# Polina.hygiene += 1
+# Polina.hygiene -= 3
+# Polina.hygiene -= 3
+# Polina.hygiene -= 3
+
+# Polina.energy += 1
+# Polina.energy -= 3
+# Polina.energy -= 3
+# Polina.energy -= 3
