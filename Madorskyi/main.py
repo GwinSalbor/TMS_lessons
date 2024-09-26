@@ -120,3 +120,4 @@ class PlantSim(Sim):
     def restore_hunger(self):
         self.hunger = 10
         self.cost_of_living(exception='hunger')
+
