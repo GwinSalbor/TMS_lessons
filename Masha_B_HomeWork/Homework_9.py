@@ -15,7 +15,7 @@ class Sim:
         self.energy = 10
         self.total_worked_hours = 0
         self.current_job = None
-        self.alive = True  # Track whether the Sim is alive
+        self.alive = True
 
     @property
     def time(self):
